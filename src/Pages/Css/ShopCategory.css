@@ -1,0 +1,203 @@
+/* --- BANNER IMAGE --- */
+.shopcategory-banner {
+  display: block;
+  margin: 20px auto;
+  width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(110, 38, 158, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shopcategory-banner:hover {
+  transform: scale(1.015);
+  box-shadow: 0 0 30px rgba(110, 38, 158, 0.35);
+}
+
+/* --- SORT AND INDEX BAR --- */
+.shopcategory-indexSort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px auto;
+  width: 85%;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.shopcategory-indexSort p {
+  font-size: 17px;
+  color: #555;
+}
+
+.shopcategory-indexSort p span {
+  font-weight: 600;
+  color: #333;
+}
+
+.shopcategory-sort {
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 1px solid #ae3889;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  color: #7d2393;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(110, 38, 158, 0.1);
+}
+
+.shopcategory-sort:hover {
+  background-color: #fdf1fb;
+  color: #501396;
+  box-shadow: 0 0 20px rgba(110, 38, 158, 0.4);
+  transform: scale(1.05);
+}
+
+/* --- PRODUCTS WRAPPER --- */
+.shopcategory-products-wrapper {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 18px;
+  width: 92%;
+  margin: 30px auto;
+  box-shadow: 0 6px 18px rgba(110, 38, 158, 0.12);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.shopcategory-products-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  bottom: -15px;
+  left: -15px;
+  right: -15px;
+  background: linear-gradient(60deg, #ae3889, #edebf0, #4f1c89);
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  border-radius: 25px;
+}
+
+.shopcategory-products-wrapper:hover {
+  transform: scale(1.015);
+  box-shadow: 0 0 35px rgba(236, 235, 237, 0.4);
+  z-index: 2;
+}
+
+.shopcategory-products-wrapper:hover::before {
+  opacity: 1;
+}
+
+/* --- PRODUCT GRID LAYOUT --- */
+.shopcategory-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.shopcategory-products .item {
+  background: white; /* ✅ White background before hover */
+  padding: 0.6rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* subtle default shadow */
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.3;
+  width: 100%;
+  max-width: 260px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.shopcategory-products .item:hover {
+  transform: scale(1.05);
+  background: white; /* keep background white on hover */
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.7),
+              0 0 40px rgba(168, 85, 247, 0.4),
+              0 0 60px rgba(168, 85, 247, 0.2); /* 💜 Glowing effect */
+}
+
+/* Optional: Soft blur glow behind card on hover */
+.shopcategory-products .item::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: rgba(168, 85, 247, 0.15);
+  border-radius: 20px;
+  filter: blur(25px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.shopcategory-products .item:hover::before {
+  opacity: 1; /* ✨ glow appears on hover */
+}
+
+/* --- PRODUCT IMAGE --- */
+.shopcategory-products .item img {
+  max-width: 100%;
+  height: auto;
+  max-height: 110px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+  .shopcategory-indexSort {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+  }
+
+  .shopcategory-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .shopcategory-products-wrapper {
+    padding: 1.2rem;
+  }
+
+  .shopcategory-products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shopcategory-indexSort {
+    flex-direction: column;
+    text-align: center;
+    margin: 15px auto;
+    gap: 10px;
+    width: 95%;
+  }
+
+  .shopcategory-products {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .shopcategory-banner {
+    width: 95%;
+  }
+
+  .shopcategory-products-wrapper {
+    padding: 1rem;
+  }
+}

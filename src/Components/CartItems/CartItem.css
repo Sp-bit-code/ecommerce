@@ -1,0 +1,219 @@
+.cartitems {
+    margin: 100px 10%;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(173, 136, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.cartitems:hover {
+    box-shadow: 0 0 40px rgba(173, 136, 255, 0.15);
+}
+
+.cartitems hr {
+    height: 3px;
+    background: linear-gradient(to right, #ae3889, #3b0e6e);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(59, 14, 110, 0.3);
+    margin: 20px 0;
+}
+
+.cartitems-format-main {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 0;
+    color: #4a4a4a;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.cartitems-format {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.carticon-product-icon {
+    height: 64px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(59, 14, 110, 0.1);
+}
+
+.carticon-remove-icon {
+    width: 18px;
+    margin: 0 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.carticon-remove-icon:hover {
+    transform: scale(1.2);
+}
+
+.cartitems-quantity-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cartitems-quantity-wrapper button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #d6c1f8;
+    background: #f8f5ff;
+    color: #501396;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    outline: none;
+    transition: background 0.2s;
+}
+
+.cartitems-quantity-wrapper button:hover {
+    background: #e7dbff;
+}
+
+.cartitems-quantity {
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    padding: 4px;
+}
+
+.cartitems-down {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 80px 0 40px;
+}
+
+.cartitems-total {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: #faf7ff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 18px rgba(59, 14, 110, 0.05);
+}
+
+.cartitems-total-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 17px;
+}
+
+.cartitems-total button {
+    width: 100%;
+    height: 58px;
+    border: none;
+    background: linear-gradient(to right, #ae3889, #501396);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cartitems-total button:hover {
+    background: linear-gradient(to right, #c1499f, #6820b0);
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .cartitems-format-main {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 20px;
+        font-size: 16px;
+    }
+
+    .cartitems-down {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .cartitems-total {
+        margin: 0;
+    }
+
+    .cartitems-total button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .cartitems {
+        margin: 50px 5%;
+        padding: 25px;
+    }
+
+    .cartitems-format-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        font-size: 15px;
+    }
+
+    .cartitems-format {
+        font-size: 14px;
+    }
+
+    .cartitems-quantity-wrapper button {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .cartitems-quantity {
+        width: 40px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cartitems {
+        margin: 30px 4%;
+        padding: 20px;
+    }
+
+    .cartitems-format-main {
+        grid-template-columns: 1fr 1fr;
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .cartitems-quantity-wrapper {
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    .cartitems-quantity {
+        width: 36px;
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .cartitems-total-item {
+        font-size: 15px;
+    }
+
+    .cartitems-total button {
+        font-size: 15px;
+    }
+}
